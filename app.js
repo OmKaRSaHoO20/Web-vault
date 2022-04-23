@@ -76,7 +76,7 @@ app.get("/auth/google",
 app.get("/auth/google/Vault",
 passport.authenticate("google", { failureRedirect: '/login' }),
     function(req, res) {
-        res.redirect("/MainFolder");
+        res.sendFile(__dirname + "/MainFolder.html");
 });
 
 // post for register
@@ -89,7 +89,7 @@ app.get("/Register", function (req, res){
 
 app.get("/MainFolder", function(req, res){
     if (req.isAuthenticated()){
-        res.render("MainFolder");
+        res.sendFile(__dirname + "/MainFolder.html");
     }
     else{
         res.redirect("/loginform");
@@ -104,7 +104,7 @@ app.post("/Register", function(req,res){
         }
         else{
             passport.authenticate("local")(req,req, function(){
-                res.redirect("/MainFolder");
+                res.sendFile(__dirname + "/MainFolder.html");
             })
         }
     })
@@ -134,7 +134,7 @@ app.post("/loginform", function(req,res){
             console.log(err);
         }else{
             passport.authenticate("local")(req,res,function(){
-                res.redirect("/MainFolder");
+                res.sendFile(__dirname + "/MainFolder.html");
             })
         }
     })
