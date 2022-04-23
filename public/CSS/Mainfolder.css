@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}   
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  /* padding: 30px; */
+}
+.main{    
+  width: 85vw;
+  height: 80vh;
+  background-color: #fff;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 1rem 1rem -0.7rem rgba( 0, 0, 0, 0.4);
+
+  /* grid */
+  display: grid;
+  grid-template-columns: 0.6fr 2fr 0.5fr;
+  row-gap: 1em;
+}
+
+/* left */
+header > h4{
+  text-align: left;
+  padding-left: 10px;
+  background-color: orange;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10px;
+}
+footer > p{
+  text-align: right;
+  margin-right: 10px;
+}
+input{
+  background-color: gray;
+  border-radius: 5px;
+  text-align: center;
+  color: aqua;
+}
+input::placeholder{
+  color:aliceblue;
+}
+.left{
+  /* padding-left: 10px; */
+  color: #fff;
+  display: grid;
+  background-color: rgb(82, 82, 82);
+  grid-template-rows: 1fr 1fr 0.1fr;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+.custom{
+  border-bottom: gray solid 2px;
+}
+/* left */
+
+/* Middle */
+.middle{
+  padding: 8rem 2rem;
+  justify-content: center;
+  text-align: center;
+  border: black solid;
+  border-top: 2px;
+  border-bottom: 2px;
+}
+/* Middle */
+
+/* Right */
+.right{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.right .settings >p > a, .right .diary >p > a{
+  color: black;
+}
+.settings > p, .diary > p{
+  height: 40px;
+  font-size: larger;
+  padding-left: 5px;
+  border-bottom: gray solid 2px;
+  padding-top: 6px;
+}
+/* Right */

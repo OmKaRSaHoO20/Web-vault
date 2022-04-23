@@ -1,0 +1,10 @@
+.loginlink{
+    padding: 30px;
+    text-align: center;
+}
+.loginlink > a{
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(110, 109, 109);
+}

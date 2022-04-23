@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+    background-color: black;
+    color: #fff;
+}
+.margin{
+  height: 8px;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+}
+.section{
+  box-sizing: border-box;
+  display: flex;
+  border-top: 10px;
+  border-bottom: 10px;
+}
+.bgimg{
+  background-image: url(../Images/Firstsection.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 7;
+  height: 100vh;
+  width: 98.8vw;
+}
+
+/* First */
+.first{
+  text-align: center;
+  padding: 30px;
+}
+.first >header{
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.first > p{
+  padding-left: 200px;
+  padding-right: 200px;
+}
+/* First */
+
+/* Tutorial */
+.fourth{
+  text-align: center;
+  padding: 50px;
+}
+.fourth-img{
+  padding-top: 60px;
+}
+/* Tutorial */
+
+/* fifth section */
+.details{
+  box-sizing: border-box;
+  text-align: center;
+  padding-bottom: 150px;
+}
+.details h1{
+  padding: 60px;
+  font-size: 40px;
+}
+.container .title{
+  padding: 70px 45px;
+}
+.container .title .content{
+  width: 950px;
+  margin: auto;
+  padding: 75px 0;
+  text-align: center;
+}
+.container .title .content h1{
+  width: 650px;
+  margin: auto;
+  font-size: 3.1rem;
+  text-align: center;
+}
+.container .title .content h2{
+  width: 650px;
+  margin: auto;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.summary{
+  height: 60px;
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-size: 30px;
+  outline: none;
+  text-align: left;
+  padding-bottom: 50px;
+  margin-bottom: 8px;
+  /* box-sizing: border-box; */
+  background-color: rgba(63, 61, 61, 0.733);
+}
+.summaryptag{
+  height: auto;
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-size: 30px;
+  outline: none;
+  text-align: left;
+  /* padding-bottom: 50px; */
+  margin-bottom: 8px;
+  /* box-sizing: border-box; */
+  background-color: rgba(63, 61, 61, 0.733);
+}
+/* fifth section */
+
+/* Footer */
+.list{
+  color:rgb(110, 109, 109);
+  padding-left: 15rem;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+.list .lastcontainer >p{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.list .lastcontainer >p >a{
+  text-decoration: none;
+  color: rgb(110, 109, 109);
+}
+.list .lastcontainer .lastcontainerlist{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#img{
+  position: relative;
+  bottom: 100px;
+  text-align: center;
+} 
+.list .lastcontainer .lastcontainerlist .griditems .lastcontainerlistcontents{
+  padding: 10px;
+  font-size: 15px;
+}
+.padding{
+  padding-top: 20px;
+  font-size: 13px;
+}
+#h6{
+  text-align: center;
+  color: rgb(153 153 153);
+  font-weight: 100;
+  padding-left: 20%;
+  padding-right: 28%;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+/* Footer */
