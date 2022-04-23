@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const passport =require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require("mongoose-findorcreate");
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({
     secret: 'My secret',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -30,29 +31,31 @@ mongoose.connect("mongodb://localhost:27017/infinityDB");
 const userSchema = new mongoose.Schema({
     email: String,
     password : String,
-    googleId: String
+    googleId: String,
+    secret: String
 })
 
 userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
-passport.serializeUser(function(user, done){
+passport.serializeUser(function(user, done) {
     done(null, user.id);
-})
-
-passport.deserializeUser(function(id, done) {
+  });
+  
+  passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
-        done(err, user);
+      done(err, user);
     });
-});
+  });
 
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:2020/auth/google/infinityvault",
+    callbackURL: "https://localhost:4507/auth/google/Vault",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -66,15 +69,15 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
  
-app.get("/auth/google",passport.authenticate("google", { 
-    scope: ["profile"] 
-}));
+app.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile"] })
+);
 
-app.get("/auth/google/infinityvault", 
-  passport.authenticate("google", { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect("/MainFolder");
-  });
+app.get("/auth/google/Vault",
+passport.authenticate("google", { failureRedirect: '/login' }),
+    function(req, res) {
+        res.redirect("/MainFolder");
+});
 
 // post for register
 
@@ -94,7 +97,7 @@ app.get("/MainFolder", function(req, res){
 });
 
 app.post("/Register", function(req,res){
-    User.register({username: req.body.username}, req.body.passwod, function(err,user){
+    User.register({username: req.body.username}, req.body.password, function(err,user){
         if (err){
             console.log(err);
             res.redirect("/Register");
@@ -137,6 +140,36 @@ app.post("/loginform", function(req,res){
     })
 })
 
+app.get("/MyDiary",function(req,res){
+    res.render("/MyDiary");
+})
+app.get("/submit", function(req, res){
+    res.render("submit");
+});
+app.post("/submit", function(req, res){
+    const submittedSecret = req.body.secret;
+    User.findById(req.user.id, function(err, foundUser){
+        if (err) {
+          console.log(err);
+        } else {
+          if (foundUser) {
+            foundUser.secret = submittedSecret;
+            foundUser.save(function(){
+              res.redirect("/secrets");
+            });
+          }
+        }
+      });
+    });
+    
+    app.get("/logout", function(req, res){
+      req.logout();
+      res.redirect("/");
+    });
+
+app.get("/Notes", function(req, res){
+    res.render("/Notes");
+})
 
 
 
@@ -145,7 +178,7 @@ app.post("/loginform", function(req,res){
 
 
 
-app.listen(2020, function(){
+app.listen(4507, function(){
     console.log("Server started on port 2020");
 });
 

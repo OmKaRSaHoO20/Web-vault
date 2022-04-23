@@ -29,6 +29,57 @@ body{
   height: 100vh;
   width: 98.8vw;
 }
+.mainContainer .Nav .nav{
+  height: 5rem;
+}
+.Nav .nav .navlogo > img{
+  margin-left: 7rem;
+  padding-top: 1.4rem;
+}
+nav{
+  transition:all 0.5s;
+  position: sticky;
+  width: 98.8vw;
+  height: 15.8vh;
+}
+nav:hover{
+  transition: all 0.5s;
+  background-color: rgb(215, 215, 215);
+}
+.nav{
+  color: rgba(0, 0, 0, 0.6);
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.nav .nav-items{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav-items a, .where{
+  text-decoration: none;
+  color: #1e3932;;
+  margin:0 10px;
+}
+.nav .nav-items > a{
+  padding-left: 2rem;
+  padding-top: 1.4rem;
+  font-weight: 500;
+  font-size: large
+}
+.left{
+  float: left;
+}
+.right{
+  justify-content: center;
+  align-items: center;
+  padding-left: 6rem;
+  padding-top: 1.4rem;
+}
 
 /* First */
 .first{
@@ -45,6 +96,85 @@ body{
   padding-right: 200px;
 }
 /* First */
+
+/* Third */
+.section .leftthird{
+  float: left;
+  text-align: center;
+  width: 950px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 90px;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}   
+.section .rightthird{
+  margin-top: 50px;
+  margin-left: 70px;
+  width: 50%;
+}
+.section .leftthird > h1{
+  width: 600px;
+  letter-spacing: 2px;
+  margin: auto;
+  font-size: 3.1rem;
+  text-align: center;
+}
+.section .righthird > p{
+  width: 650px;
+  margin: auto;
+  font-size: 1.6rem;
+  text-align: center;
+}
+/* Third */
+
+#2ndimg{
+  bottom: 50px;
+}
+.leftsecond{
+  float: left;
+  padding-left: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.rightsecond{
+  float: right;
+  text-align: center;
+  width: 950px;
+  margin: auto;
+  margin-left: 30px;
+  margin-right: 90px;
+  justify-content: center;
+  align-items: center;
+}
+.section .rightsecond h1{
+  width: 600px;
+  letter-spacing: 2px;
+  margin: auto;
+  font-size: 3.1rem;
+  text-align: center;
+}
+.section .rightsecond > p{
+  width: 650px;
+  margin: auto;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* login */
+.loginlink{
+  padding: 30px;
+  text-align: center;
+}
+.loginlink > a{
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bolder;
+  color: rgb(110, 109, 109);
+}
+/* login */
 
 /* Tutorial */
 .fourth{
