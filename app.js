@@ -104,7 +104,7 @@ app.post("/Register", function(req,res){
         }
         else{
             passport.authenticate("local")(req,req, function(){
-                res.sendFile(__dirname + "/MainFolder.html");
+                res.redirect("/loginform");
             })
         }
     })
@@ -140,12 +140,25 @@ app.post("/loginform", function(req,res){
     })
 })
 
-app.get("/MyDiary",function(req,res){
-    res.render("/MyDiary");
-})
+// app.get("/MyDiary",function(req,res){
+//     res.render("MyDiary");
+// })
 app.get("/submit", function(req, res){
     res.render("submit");
 });
+
+app.get("/MyDiary", function(req, res){
+    User.find({"MyDiary": {$ne: null}}, function(err, foundUsers){
+      if (err){
+        console.log(err);
+      } else {
+        if (foundUsers) {
+          res.render("MyDiary", {usersWithSecrets: foundUsers});
+        }
+      }
+    });
+  });
+
 app.post("/submit", function(req, res){
     const submittedSecret = req.body.secret;
     User.findById(req.user.id, function(err, foundUser){
@@ -155,7 +168,7 @@ app.post("/submit", function(req, res){
           if (foundUser) {
             foundUser.secret = submittedSecret;
             foundUser.save(function(){
-              res.redirect("/secrets");
+              res.redirect("/MyDiary");
             });
           }
         }
@@ -166,6 +179,7 @@ app.post("/submit", function(req, res){
       req.logout();
       res.redirect("/");
     });
+
 
 app.get("/Notes", function(req, res){
     res.render("/Notes");

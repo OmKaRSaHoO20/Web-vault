@@ -29,8 +29,32 @@ body{
   height: 100vh;
   width: 98.8vw;
 }
-.mainContainer .Nav .nav{
-  height: 5rem;
+ .title{
+  padding: 70px 45px;
+}
+.title .content{
+  width: 950px;
+  margin: auto;
+  padding: 75px 0;
+  text-align: center;
+}
+.title .content h1{
+  line-height: 60px;
+  padding: 10px;
+  width: 650px;
+  margin: auto;
+  font-size: 3.1rem;
+  text-align: center;
+}
+.title .content h2{
+  margin: auto;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.title .content form h3{
+  font-size: 1.1em;
+  margin: 18px 0;
+  text-align: center;
 }
 .Nav .nav .navlogo > img{
   margin-left: 7rem;
@@ -44,7 +68,7 @@ nav{
 }
 nav:hover{
   transition: all 0.5s;
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(196, 196, 196);
 }
 .nav{
   color: rgba(0, 0, 0, 0.6);
@@ -79,6 +103,12 @@ nav:hover{
   align-items: center;
   padding-left: 6rem;
   padding-top: 1.4rem;
+}
+.email > a{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bolder;
+  color: brown;
 }
 
 /* First */
