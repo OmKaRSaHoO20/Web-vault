@@ -16,7 +16,7 @@ body{
 }
 .section{
   box-sizing: border-box;
-  display: flex;
+  display: flex; 
   border-top: 10px;
   border-bottom: 10px;
 }
@@ -56,7 +56,9 @@ body{
   margin: 18px 0;
   text-align: center;
 }
-.Nav .nav .navlogo > img{
+.Nav .nav .navlogo > p{
+  color: rgb(129, 129, 129);
+  font-size: 30px;
   margin-left: 7rem;
   padding-top: 1.4rem;
 }
@@ -66,18 +68,20 @@ nav{
   width: 98.8vw;
   height: 15.8vh;
 }
-nav:hover{
+.nav .navlogo{
+  float: left;
+  padding-right: 50rem;
+}
+/* nav:hover{
   transition: all 0.5s;
   background-color: rgb(196, 196, 196);
-}
+} */
 .nav{
   color: rgba(0, 0, 0, 0.6);
   margin:0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
 }
 .nav .nav-items{
   display:flex;
@@ -95,15 +99,25 @@ nav:hover{
   font-weight: 500;
   font-size: large
 }
-.left{
-  float: left;
+.nav{
+  display:flex;
 }
+/* .left{
+  float: left;
+} */
 .right{
   justify-content: center;
   align-items: center;
   padding-left: 6rem;
   padding-top: 1.4rem;
 }
+.right > p > a{
+  text-decoration: none;
+  font-size: 25px;
+  /* font-weight: bolder; */
+  color: brown;
+}
+
 .email > a{
   text-decoration: none;
   font-size: 30px;

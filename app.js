@@ -180,9 +180,12 @@ app.post("/submit", function(req, res){
       res.redirect("/");
     });
 
+    app.get("/All-items",function(req,res){
+      res.sendFile(__dirname + "/All-items.html")
+    })
 
 app.get("/Notes", function(req, res){
-    res.render("/Notes");
+    res.redirect("/localhost:3000");
 })
 
 
